@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/logo.svg" alt="">
+        </div>
+        <nav>
+            <a href="">Главная</a>
+            <a href="">Заказать пошив</a>
+            <a href="">Наши работы</a>
+            <img src="img/view_headline.svg" alt="" id="menuToggle">
+        </nav>
+    </header>
+    <aside class="sidebar" id="sidebar">
+        <a href="">Главная</a>
+        <a href="">Заказать пошив</a>
+        <a href="">Наши работы</a>
+        <button id="closeSidebar">Закрыть</button>
+    </aside>
+    <div class="hero-block-con">
+        <div class="hero-block">
+            <div class="text">
+                <h1>Ателье Белошвейка</h1>
+                <p>Пошив одежды на заказ, ремонт любой сложности</p>
+            </div>
+        </div>
+    </div>
+    <section class="container">
+        <div class="advantages-block">
+            <h2>Наши преимущества</h2>
+            <div class="advantages">
+                <div class="advantage">
+                    <img src="./img/done_all.svg" alt="">
+                    <h3>Цена-качество</h3>
+                    <p>В нашем ателье вы получите наилучшее качество за свою цену.</p>
+                </div>
+                <div class="advantage">
+                    <img src="./img/schedule.svg" alt="">
+                    <h3>Быстрая работа</h3>
+                    <p>Максимально быстрое выполнение заказов без потери качества.</p>
+                </div>
+                <div class="advantage">
+                    <img src="./img/accessibility.svg" alt="">
+                    <h3>Индивидуальный подход</h3>
+                    <p>Мы учитываем индивидуальные особенности каждого.</p>
+                </div>
+                <div class="advantage">
+                    <img src="./img/event.svg" alt="">
+                    <h3>Гибкий график работы</h3>
+                    <p> Удобный график в котором каждый клиент найдет свое время.</p>
+                </div>
+            </div>
+        </div>
+        <div class="info-block">
+            <h2>Кому необходим индивидуальный пошив</h2>
+            <div class="reasons">
+                <div class="reason">
+                    <div class="number">1</div>
+                    <div class="text">
+                        <h3>Девушкам, которым не подходит одежда стандартных размеров</h3>
+                        <p>Двух одинаковых фигур не бывает. То, что выигрышно смотрится на вашей подруге, может сделать неприметной вашу яркую внешность. Пошив одежды на заказ по индивидуальным меркам – это гарантия ее идеальной посадки на фигуре любого типа.</p>
+                    </div>
+                </div>
+                <div class="reason">
+                    <div class="number">2</div>
+                    <div class="text">
+                        <h3>Тем, кто не любит тратить время на утомительный шопинг</h3>
+                        <p>Часто мы пытаемся найти в магазине какую-то конкретную вещь – точно знаем, какой цвет, материал и какую модель хотим, но, кажется, кроме нас ее еще никто не придумал. Пошив одежды на заказ – это способ получить желаемую вещь, сэкономив время и силы на ее поиске.</p>
+                    </div>
+                </div>
+                <div class="reason">
+                    <div class="number">3</div>
+                    <div class="text">
+                        <h3>Всем, кто предпочитает носить эксклюзивную одежду</h3>
+                        <p>Пошив одежды на заказ – это возможность получить одежду, созданную с учетом ваших личных желаний и особенностей вкуса, стиля, характера и образа жизни. Это ваша творческая самореализация и способ выделиться.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="order-block">
+            <h2>Хотите заказать пошив?</h2>
+            <div class="text-btn">
+                <p>Для заказа пошива позвоните нам на номер<br> +7 917 139 45 44<br> Или оставьте заявку на сайте</p>
+                <button id="openModalBtn">Оставить заявку</button>
+            </div>
+        </div>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+              <span class="close-btn" id="closeModalBtn">&times;</span>
+              <h3>Оставьте заявку</h3>
+          
+              <form id="orderForm" class="order-form">
+                <input type="text" id="name" name="name" required placeholder="Ваше имя">
+                <input type="tel" id="phone" name="phone" required placeholder="Номер телефона">
+                <textarea id="message" name="message" rows="4" placeholder="Опишите, что хотите пошить..."></textarea>
+                <button type="submit">Отправить заявку</button>
+              </form>
+          
+              <div class="successMessage" id="successMessage">
+                Ваша заявка успешно отправлена
+              </div>
+            </div>
+          </div>
+        <div class="swiper mySwiper">
+            <h2>Наши работы</h2>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="./img/image 21.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="./img/image 26.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="./img/image 23.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="./img/image 28.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="./img/image 24.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="./img/image 27.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="./img/image 22.jpg" alt=""></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="advantages2-block">
+            <div class="advantages">
+                <div class="advantage">
+                    <img src="./img/Vector.svg" alt="">
+                    <p>Создаем одежду по индивидуальным меркам.</p>
+                </div>
+                <div class="advantage">
+                    <img src="./img/Group.svg" alt="">
+                    <p>Гарантируем безупречную посадку изделия.</p>
+                </div>
+                <div class="advantage">
+                    <img src="./img/Group2.svg" alt="">
+                    <p>Только бережная ручная работа высокого качества.</p>
+                </div>
+                <div class="advantage">
+                    <img src="./img/Vector2.svg" alt="">
+                    <p>Воплотим вашу идею и предложим лучшие ткани.</p>
+                </div>
+            </div>
+        </div>
+        <div class="questions-block">
+            <h2>Часто задаваемые вопросы</h2>
+            <div class="questions">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-title">
+                            <h3>Сколько стоит пошив?</h3>
+                            <span class="arrow"><img src="./img/Feather Icon.svg" alt=""></span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Стоимость пошива изделия определяется такими факторами,как вид ткани и качество расходных материалов, модель изделия,наличие усложняющих элементов,способ обработки.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-title">
+                            <h3>Сроки изготовления</h3>
+                            <span class="arrow"><img src="./img/Feather Icon.svg" alt=""></span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Сроки изготовления зависят от сложности работы.</p>
+                        </div>
+                    </div>                
+                    <div class="accordion-item">
+                        <div class="accordion-title">
+                            <h3>Какой график работы?</h3>
+                            <span class="arrow"><img src="./img/Feather Icon.svg" alt=""></span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Гибкий график. С понедельника по субботу.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-title">
+                            <h3>Какие у вас гарантии на готовые изделия?</h3>
+                            <span class="arrow"><img src="./img/Feather Icon.svg" alt=""></span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>При пошиве мы используем натуральные ткани, качественную фурнитуру и высокотехнологичное швейное оборудование, поэтому гарантируем высокое качество и длительный срок ношения одежды при должном уходе. В любом случае мы предоставляем 6 месяцев гарантийного срока на все наши изделия.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="content">
+            <div class="top">
+                <nav>
+                    <a href="">Главная</a>
+                    <a href="">Заказать пошив</a>
+                    <a href="">Наши работы</a>
+                </nav>
+                <div class="contact">
+                    <h3>Связаться с нами</h3>
+                    <p>+7 917 139 45 44</p>
+                    <p>beloshveika@gmail.com</p>
+                </div>
+                <div class="socials">
+                    <h3>Соц. сети</h3>
+                    <div class="vk-tg">
+                        <img src="./img/vk.svg" alt="">
+                        <img src="./img/tg.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <p>© Ателье Белошвейка</p>
+                <p>г. Тольятти улица Ярославская 35-а второй этаж офис 2а</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="accordion.js"></script>
+    <script src="form.js"></script>
+    <script src="sidebar.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
+</body>
+</html>
