@@ -1,0 +1,318 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  list-style-type: none;
+  outline: none;
+  font-family: "Rubik", sans-serif;
+}
+
+.Heroblock_Kap {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+.Heroblock_Kap .desktop {
+  max-width: 1820px;
+  width: 100%;
+}
+.Heroblock_Kap .mobile {
+  display: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #162EAE;
+  padding: 10px 59px;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+header nav a {
+  color: white;
+  font-size: 24px;
+  transition: 0.3s ease-out;
+}
+header nav a:hover {
+  color: rgb(207, 207, 207);
+}
+header nav img {
+  display: none;
+}
+
+.Description {
+  display: flex;
+  flex-direction: column;
+}
+.Description .up {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1637px;
+  padding-left: 50px;
+  padding-bottom: 60px;
+  width: 100%;
+}
+.Description .up a {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 130%;
+  color: #848386;
+  text-decoration: underline;
+}
+.Description .up .title {
+  font-size: 78px;
+  font-weight: 500;
+  letter-spacing: -2%;
+  line-height: 0.8;
+  color: ter;
+}
+.Description .down_container {
+  max-width: 1920px;
+  width: 100%;
+  border-top: 1px #EAEAEA solid;
+}
+.Description .down_container .down {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 60px 50px 0px 50px;
+}
+.Description .down_container .down .romb_text {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.Description .down_container .down .romb_text img {
+  width: 18px;
+  height: 18px;
+}
+.Description .down_container .down .romb_text p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 130%;
+  color: #0a0a0a;
+  max-width: 262px;
+  width: 100%;
+}
+.Description .down_container .down .gray {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 130%;
+  color: #848386;
+  max-width: 714px;
+  width: 100%;
+}
+.Description .down_container .down .right {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.Description .down_container .down .right p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 130%;
+  color: #0a0a0a;
+}
+.Description .down_container .down .right button {
+  width: 100%;
+  padding: 25px 154px;
+  background: #ffffff;
+  border-radius: 1000px;
+  border: 1px #848386 solid;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 120%;
+  color: #848386;
+  cursor: pointer;
+}
+
+.Another {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  padding: 100px 0px 0px 0px;
+}
+.Another .title {
+  display: flex;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: -2%;
+  color: black;
+  max-width: 997px;
+  width: 100%;
+}
+.Another .items {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px #EAEAEA solid;
+  max-width: 1920px;
+  width: 100%;
+}
+.Another .items .item {
+  max-width: 1920px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 61px 50px 61px 50px;
+  border-top: 1px #EAEAEA solid;
+  position: relative;
+  overflow: visible;
+}
+.Another .items .item .first {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  max-width: 772px;
+  width: 100%;
+}
+.Another .items .item .first .romb_text {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.Another .items .item .first .romb_text img {
+  width: 18px;
+}
+.Another .items .item .first .romb_text p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 130%;
+}
+.Another .items .item .first .name {
+  display: flex;
+  align-items: center;
+  max-width: 460px;
+  width: 100%;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 120%;
+  cursor: pointer;
+}
+.Another .items .item .first a {
+  display: flex;
+  align-items: center;
+  max-width: 322px;
+  width: 100%;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 120%;
+  cursor: pointer;
+  color: #0a0a0a;
+}
+.Another .items .item .second {
+  display: flex;
+  flex-direction: row;
+  max-width: 905px;
+  width: 100%;
+  justify-content: space-between;
+}
+.Another .items .item .second .price {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 130%;
+}
+.Another .items .item .second .details {
+  color: #848386;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 130%;
+  text-decoration: underline;
+}
+.Another .items .item .second .brown_detail {
+  color: #FFFBFC;
+}
+.Another .items .item img.repair-photo {
+  position: absolute;
+  bottom: -80px;
+  right: 580px;
+  z-index: 10;
+  height: 322px;
+}
+.Another .items .blue {
+  background: #4A60D7;
+  color: #FFFBFC;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: #162EAE;
+  color: white;
+  padding: 60px 20px;
+  font-size: 22px;
+  margin-top: 60px;
+}
+footer .content {
+  width: 100%;
+  max-width: 1613px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+footer .content .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+footer .content .top nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+footer .content .top nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  transition: 0.3s ease-out;
+}
+footer .content .top nav a:hover {
+  color: rgb(207, 207, 207);
+}
+footer .content .top .contact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+footer .content .top .contact h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+footer .content .top .socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+footer .content .top .socials h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+footer .content .top .socials .vk-tg {
+  display: flex;
+  gap: 12px;
+}
+footer .content .top .socials .vk-tg img {
+  width: 32px;
+  height: 32px;
+}
+footer .content .bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 16px;
+  gap: 50px;
+}
+footer .content .bottom p {
+  margin: 0;
+  font-size: 24px;
+}/*# sourceMappingURL=poshiv2.css.map */
