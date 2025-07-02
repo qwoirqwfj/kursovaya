@@ -17,11 +17,22 @@
         <nav>
             <a href="index.html">Главная</a>
             <a href="uslugi.html">Услуги</a>
-            <a href="">Заказать пошив</a>
-            <a href="">Наши работы</a>
+            <a href="remont.html">Отзывы</a>
+            <a href="our-works.html">Наши работы</a>
+            <a href="about-us.html">О нас</a>
+            <a href="faq.html">FAQ</a>
             <img src="img/view_headline.svg" alt="" id="menuToggle">
         </nav>
     </header>
+    <aside class="sidebar" id="sidebar">
+        <a href="index.html">Главная</a>
+        <a href="uslugi.html">Услуги</a>
+        <a href="reviews.html">Отзывы</a>
+        <a href="our-works.html">Наши работы</a>
+        <a href="about-us.html">О нас</a>
+        <a href="faq.html">FAQ</a>
+        <button id="closeSidebar">Закрыть</button>
+    </aside>
 
     <div class="Heroblock_Kap">
        <img class="desktop" src="./img/item 1.png" alt="">
@@ -29,7 +40,6 @@
 
     <div class="Description">
         <div class="up">
-            <a href="/Catalog">Назад</a>
             <p class="title">Ремонт одежды</p>
         </div>
         
@@ -42,7 +52,7 @@
                 <p class="gray">Ремонт одежды начинается с детального осмотра и оценки проблемы. Далее происходит выбор подходящих материалов и фурнитуры для ремонта. Затем мастер переходит к этапу выполнения работы, который может включать штопку, замену молний или перешивание швов. После завершения всех процедур проводится качественный контроль и, если необходимо, окончательная обработка, чтобы одежда выглядела как новая и служила ещё долго.</p>
                 <div class="right">
                     <p>от 500 руб.</p>
-                    <button>Заказать ремонт</button>
+                    <button id="openModalBtn">Заказать ремонт</button>
                 </div>
             </div>
         </div>
@@ -72,34 +82,91 @@
             </div>
         </div>
     </div>
-
+    <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn" id="closeModalBtn">&times;</span>
+          <h3>Оставьте заявку</h3>
+      
+          <form id="orderForm" class="order-form">
+            <input type="text" id="name" name="name" required placeholder="Ваше имя">
+            <input type="tel" id="phone" name="phone" required placeholder="Номер телефона">
+            <textarea id="message" name="message" rows="4" placeholder="Опишите, что хотите пошить..."></textarea>
+            <button type="submit">Отправить заявку</button>
+          </form>
+      
+          <div class="successMessage" id="successMessage">
+            Ваша заявка успешно отправлена
+          </div>
+        </div>
+    </div>
     <footer>
         <div class="content">
             <div class="top">
                 <nav>
                     <a href="index.html">Главная</a>
                     <a href="uslugi.html">Услуги</a>
-                    <a href="">Заказать пошив</a>
-                    <a href="">Наши работы</a>
+                    <a href="our-works.html">Наши работы</a>
+                </nav>
+                <nav>
+                    <a href="reviews.html">Отзывы</a>
+                    <a href="uslugi.html">О нас</a>
+                    <a href="faq.html">FAQ</a>
                 </nav>
                 <div class="contact">
-                    <h3>Связаться с нами</h3>
-                    <p>+7 917 139 45 44</p>
-                    <p>beloshveika@gmail.com</p>
-                </div>
-                <div class="socials">
-                    <h3>Соц. сети</h3>
-                    <div class="vk-tg">
-                        <img src="./img/vk.svg" alt="">
-                        <img src="./img/tg.svg" alt="">
-                    </div>
+                   <a href="contact.html">Контактные данные</a>
                 </div>
             </div>
             <div class="bottom">
                 <p>© Ателье Белошвейка</p>
-                <p>г. Тольятти улица Ярославская 35-а второй этаж офис 2а</p>
             </div>
         </div>
     </footer>
+    <script src="js/sidebar.js"></script>
+    <script src="js/form.js"></script>
+    <script>
+        document.getElementById("orderForm").addEventListener("submit", function (e) {
+          e.preventDefault();
+      
+          const name = document.getElementById("name").value.trim();
+          const phone = document.getElementById("phone").value.trim();
+          const message = document.getElementById("message").value.trim();
+      
+          const telegramToken = '8116743960:AAEuXHf3VkDwkWPj6r8WDd_Vf6UkdsujNmU';
+          const chatId = '1603875235';
+      
+          const text = `🧵 Новая заявка:\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n💬 Сообщение: ${message}`;
+      
+          const url = `https://api.telegram.org/bot${telegramToken}/sendMessage`;
+      
+          console.log("📤 Отправка запроса в Telegram...");
+      
+          fetch(url, {
+            method: 'POST',
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              chat_id: chatId,
+              text: text
+            })
+          })
+          .then(response => {
+            console.log("✅ Ответ от Telegram:", response);
+            if (response.ok) {
+              document.getElementById("successMessage").style.display = "block";
+              document.getElementById("orderForm").reset();
+            } else {
+              response.text().then(text => {
+                console.error("❌ Ошибка от Telegram:", text);
+                alert("Ошибка при отправке. Попробуйте позже.");
+              });
+            }
+          })
+          .catch(error => {
+            console.error("❌ Ошибка подключения:", error);
+            alert("Ошибка подключения.");
+          });
+        });
+      </script>
 </body>
 </html>

@@ -15,36 +15,6 @@ h2 {
   text-align: center;
 }
 
-@media (max-width: 512px) {
-  header {
-    padding: 10px 16px !important;
-  }
-}
-@media (max-width: 594px) {
-  .swiper-slide {
-    width: 200px !important;
-    height: 300px !important;
-  }
-}
-@media (max-width: 622px) {
-  .hero-block .text {
-    padding-left: 40px !important;
-  }
-  .hero-block .text h1 {
-    font-size: 42px !important;
-  }
-  .hero-block .text p {
-    font-size: 24px !important;
-  }
-}
-@media (max-width: 900px) {
-  header nav a {
-    display: none;
-  }
-  header nav img {
-    display: flex !important;
-  }
-}
 header {
   display: flex;
   justify-content: space-between;
@@ -71,7 +41,7 @@ header nav img {
 .sidebar {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
   max-height: 100%;
   position: fixed;
   top: 0;
@@ -424,7 +394,7 @@ footer .content {
 footer .content .top {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   gap: 50px;
 }
@@ -444,30 +414,15 @@ footer .content .top nav a:hover {
 }
 footer .content .top .contact {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
 }
-footer .content .top .contact h3 {
+footer .content .top .contact a {
+  color: white;
+  text-decoration: none;
   font-size: 24px;
-  font-weight: bold;
+  transition: 0.3s ease-out;
 }
-footer .content .top .socials {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-footer .content .top .socials h3 {
-  font-size: 24px;
-  font-weight: 500;
-}
-footer .content .top .socials .vk-tg {
-  display: flex;
-  gap: 12px;
-}
-footer .content .top .socials .vk-tg img {
-  width: 32px;
-  height: 32px;
+footer .content .top .contact a:hover {
+  color: rgb(207, 207, 207);
 }
 footer .content .bottom {
   display: flex;
@@ -479,4 +434,43 @@ footer .content .bottom {
 footer .content .bottom p {
   margin: 0;
   font-size: 24px;
+}
+
+@media (max-width: 1069px) {
+  header .logo img {
+    width: 100px;
+  }
+  header nav a {
+    font-size: 16px;
+  }
+}
+@media (max-width: 900px) {
+  header nav a {
+    display: none;
+  }
+  header nav img {
+    display: flex !important;
+  }
+}
+@media (max-width: 622px) {
+  .hero-block .text {
+    padding-left: 40px !important;
+  }
+  .hero-block .text h1 {
+    font-size: 42px !important;
+  }
+  .hero-block .text p {
+    font-size: 24px !important;
+  }
+}
+@media (max-width: 594px) {
+  .swiper-slide {
+    width: 200px !important;
+    height: 300px !important;
+  }
+}
+@media (max-width: 512px) {
+  header {
+    padding: 10px 16px !important;
+  }
 }/*# sourceMappingURL=style.css.map */

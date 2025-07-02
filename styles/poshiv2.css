@@ -45,6 +45,40 @@ header nav img {
   display: none;
 }
 
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 100%;
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 250px;
+  height: 100%;
+  background-color: #4A60D7;
+  transition: right 0.3s ease-in-out;
+  padding: 20px;
+  z-index: 1000;
+}
+.sidebar a {
+  color: white;
+  font-size: 20px;
+  transition: 0.3s ease-out;
+}
+.sidebar a:hover {
+  color: rgb(207, 207, 207);
+}
+.sidebar button {
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.sidebar.active {
+  right: 0;
+}
+
 .Description {
   display: flex;
   flex-direction: column;
@@ -241,6 +275,81 @@ header nav img {
   color: #FFFBFC;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal textarea {
+  resize: none;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 20px 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+.modal-content h3 {
+  font-size: 24px;
+}
+
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 28px;
+  font-weight: medium;
+  color: #333;
+  cursor: pointer;
+}
+
+.order-form {
+  display: flex !important;
+  width: 100%;
+  flex-direction: column !important;
+  gap: 30px !important;
+}
+
+.order-form input, .order-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.order-form button {
+  background-color: #4A60D7;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+.order-form button:hover {
+  background-color: #162EAE;
+}
+
+.successMessage {
+  display: none;
+  color: green;
+}
+
 footer {
   display: flex;
   justify-content: center;
@@ -248,7 +357,7 @@ footer {
   color: white;
   padding: 60px 20px;
   font-size: 22px;
-  margin-top: 60px;
+  margin-top: 200px;
 }
 footer .content {
   width: 100%;
@@ -260,7 +369,7 @@ footer .content {
 footer .content .top {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   gap: 50px;
 }
@@ -280,30 +389,15 @@ footer .content .top nav a:hover {
 }
 footer .content .top .contact {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
 }
-footer .content .top .contact h3 {
+footer .content .top .contact a {
+  color: white;
+  text-decoration: none;
   font-size: 24px;
-  font-weight: bold;
+  transition: 0.3s ease-out;
 }
-footer .content .top .socials {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-footer .content .top .socials h3 {
-  font-size: 24px;
-  font-weight: 500;
-}
-footer .content .top .socials .vk-tg {
-  display: flex;
-  gap: 12px;
-}
-footer .content .top .socials .vk-tg img {
-  width: 32px;
-  height: 32px;
+footer .content .top .contact a:hover {
+  color: rgb(207, 207, 207);
 }
 footer .content .bottom {
   display: flex;
@@ -315,4 +409,82 @@ footer .content .bottom {
 footer .content .bottom p {
   margin: 0;
   font-size: 24px;
+}
+
+@media (max-width: 1280px) {
+  .Description .up .title {
+    font-size: 48px;
+  }
+  .Description .down_container .down {
+    flex-direction: column;
+  }
+  .Another .title {
+    font-size: 48px;
+  }
+}
+@media (max-width: 1069px) {
+  header .logo img {
+    width: 100px;
+  }
+  header nav a {
+    font-size: 16px;
+  }
+}
+@media (max-width: 900px) {
+  header nav a {
+    display: none;
+  }
+  header nav img {
+    display: flex !important;
+  }
+}
+@media (max-width: 808px) {
+  .Another .items .item.blue {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .Another .items .item.blue .first .name {
+    font-size: 22px;
+  }
+  .Another .items .item.blue .second {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .Another .items .item.blue .second .price {
+    font-size: 20px;
+  }
+  .Another .items .item.blue .second .details {
+    font-size: 20px;
+  }
+  .Another .items .item.white {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .Another .items .item.white .first .name {
+    font-size: 22px;
+  }
+  .Another .items .item.white .second {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .Another .items .item.white .second .price {
+    font-size: 20px;
+  }
+  .Another .items .item.white .second .details {
+    font-size: 20px;
+  }
+}
+@media (max-width: 614px) {
+  .Description .up .title {
+    font-size: 32px;
+  }
+  .Another .title {
+    font-size: 32px;
+  }
+}
+@media (max-width: 546px) {
+  .Description .down_container .down .right button {
+    padding: 25px;
+    width: 100%;
+  }
 }/*# sourceMappingURL=poshiv2.css.map */

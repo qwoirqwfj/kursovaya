@@ -15,70 +15,32 @@ h2{
     font-weight: 600;
     text-align: center;
 }
-@media (max-width: 512px){
-  header{
-    padding: 10px 16px !important;
-  }
-}
-@media (max-width: 594px){
-  .swiper-slide{
-    width: 200px !important;
-    height: 300px !important;
-  }
- 
-}
-@media (max-width: 622px){
-  .hero-block{
-    .text{
-      padding-left: 40px !important;
-      h1{
-        font-size: 42px !important;
-      }
-      p{
-        font-size: 24px !important;
-      }
-    }
-  }
-}
-@media (max-width: 900px){
-  header{
-    nav{
-      a{
-        display: none;
-      }
-      img{
-        display: flex !important;
-      }
-    }
-
-  }
-}
 header{
     display: flex;
     justify-content: space-between;
     background-color: $bgOne;
     padding: 10px 59px;
     nav{
-        display: flex;
-        align-items: center;
-        gap: 56px;
-        a{
-          color: white;
-          font-size: 24px;
-          transition: 0.3s ease-out;
-          &:hover{
-            color: rgb(207, 207, 207);
-          }
+      display: flex;
+      align-items: center;
+      gap: 56px;
+      a{
+        color: white;
+        font-size: 24px;
+        transition: 0.3s ease-out;
+        &:hover{
+          color: rgb(207, 207, 207);
         }
-        img{
-          display: none;
-        }
-    }
+      }
+      img{
+        display: none;
+      }
+  }
 }
 .sidebar {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
   max-height: 100%;
   position: fixed;
   top: 0;
@@ -424,7 +386,7 @@ footer {
       .top {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
         flex-wrap: wrap;
         gap: 50px;
         nav {
@@ -443,30 +405,13 @@ footer {
         }
         .contact {
           display: flex;
-          flex-direction: column;
-          gap: 12px;
-  
-          h3 {
+          a{
+            color: white;
+            text-decoration: none;
             font-size: 24px;
-            font-weight: bold;
-          }
-        }
-        .socials {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 16px;
-          h3 {
-            font-size: 24px;
-            font-weight: 500;
-          }
-          .vk-tg {
-            display: flex;
-            gap: 12px;
-  
-            img {
-              width: 32px;
-              height: 32px;
+            transition: 0.3s ease-out;
+            &:hover{
+              color: rgb(207, 207, 207);
             }
           }
         }
@@ -483,4 +428,58 @@ footer {
         }
       }
     }
+}
+@media (max-width: 1069px){
+  header{
+    .logo{
+      img{
+        width: 100px;
+      }
+    }
+    nav{
+      a{
+        font-size: 16px;
+      }
+    }
   }
+}
+@media (max-width: 900px){
+  header{
+    nav{
+      a{
+        display: none;
+      }
+      img{
+        display: flex !important;
+      }
+    }
+
+  }
+}
+@media (max-width: 622px){
+  .hero-block{
+    .text{
+      padding-left: 40px !important;
+      h1{
+        font-size: 42px !important;
+      }
+      p{
+        font-size: 24px !important;
+      }
+    }
+  }
+}
+@media (max-width: 594px){
+  .swiper-slide{
+    width: 200px !important;
+    height: 300px !important;
+  }
+ 
+}
+@media (max-width: 512px){
+  header{
+    padding: 10px 16px !important;
+  }
+}
+
+

@@ -16,21 +16,54 @@ header{
     background-color: $bgOne;
     padding: 10px 59px;
     nav{
-        display: flex;
-        align-items: center;
-        gap: 56px;
-        a{
-          color: white;
-          font-size: 24px;
-          transition: 0.3s ease-out;
-          &:hover{
-            color: rgb(207, 207, 207);
-          }
+      display: flex;
+      align-items: center;
+      gap: 56px;
+      a{
+        color: white;
+        font-size: 24px;
+        transition: 0.3s ease-out;
+        &:hover{
+          color: rgb(207, 207, 207);
         }
-        img{
-          display: none;
-        }
+      }
+      img{
+        display: none;
+      }
+  }
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 100%;
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 250px;
+  height: 100%;
+  background-color: $bgTwo;
+  transition: right 0.3s ease-in-out;
+  padding: 20px;
+  z-index: 1000;
+  a{
+    color: white;
+    font-size: 20px;
+    transition: 0.3s ease-out;
+    &:hover{
+      color: rgb(207, 207, 207);
     }
+  }
+  button{
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+}
+
+.sidebar.active {
+    right: 0;
 }
 
 .Search{
@@ -98,7 +131,7 @@ header{
             justify-content: space-between;
             padding: 61px 50px 61px 50px;
             border-top: 1px #EAEAEA solid;
-            position: relative; // Обязательно, чтобы абсолютное позиционирование работало внутри
+            position: relative;
             overflow: visible;
             .first{
                 display: flex;
@@ -257,79 +290,171 @@ header{
 
 
 footer {
+  display: flex;
+  justify-content: center;
+  background-color: $bgOne;
+  color: white;
+  padding: 60px 20px;
+  font-size: 22px;
+  margin-top: 200px;
+  .content {
+    width: 100%;
+    max-width: 1613px;
     display: flex;
-    justify-content: center;
-    background-color: $bgOne;
-    color: white;
-    padding: 60px 20px;
-    font-size: 22px;
-    margin-top: 60px;
-    .content {
-      width: 100%;
-      max-width: 1613px;
+    flex-direction: column;
+    gap: 60px;
+    .top {
       display: flex;
-      flex-direction: column;
-      gap: 60px;
-      .top {
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 50px;
+      nav {
         display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        gap: 50px;
-        nav {
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-          a {
-            color: white;
-            text-decoration: none;
-            font-size: 24px;
-            transition: 0.3s ease-out;
-            &:hover{
-              color: rgb(207, 207, 207);
-            }
-          }
-        }
-        .contact {
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-  
-          h3 {
-            font-size: 24px;
-            font-weight: bold;
-          }
-        }
-        .socials {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 16px;
-          h3 {
-            font-size: 24px;
-            font-weight: 500;
-          }
-          .vk-tg {
-            display: flex;
-            gap: 12px;
-  
-            img {
-              width: 32px;
-              height: 32px;
-            }
+        flex-direction: column;
+        gap: 16px;
+        a {
+          color: white;
+          text-decoration: none;
+          font-size: 24px;
+          transition: 0.3s ease-out;
+          &:hover{
+            color: rgb(207, 207, 207);
           }
         }
       }
-      .bottom {
+      .contact {
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        font-size: 16px;
-        gap: 50px;
-        p {
-          margin: 0;
+        a{
+          color: white;
+          text-decoration: none;
           font-size: 24px;
+          transition: 0.3s ease-out;
+          &:hover{
+            color: rgb(207, 207, 207);
+          }
         }
       }
     }
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 16px;
+      gap: 50px;
+      p {
+        margin: 0;
+        font-size: 24px;
+      }
+    }
   }
+}
+@media (max-width: 1521px){
+    .Search{
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+}
+@media (max-width: 1000px){
+    .Search{
+        img{
+            width: 400px;
+        }
+        .text_search{
+            max-width: 400px;
+            .right{
+                .title{
+                    font-size: 64px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1511px){
+.Text_catalog{
+    display: flex;
+    border: none;
+    gap: 40px;
+    .up{
+        flex-direction: column;
+        gap: 20px;
+        .title{
+            font-size: 48px;
+        }
+    }
+    .down{
+        .columns{
+            justify-content: center;
+            gap: 40px;  
+            flex-wrap: wrap;
+        }
+    }
+}
+}
+@media (max-width: 1069px){
+    header{
+      .logo{
+        img{
+          width: 100px;
+        }
+      }
+      nav{
+        a{
+          font-size: 16px;
+        }
+      }
+    }
+}
+@media (max-width: 658px){
+    .Repair{
+        .items{
+            .item{
+                flex-direction: column;
+                .first{
+                   .name{
+                    font-size: 22px;
+                   }
+                }
+                .second{
+                    flex-direction: column;
+                    .price{
+                        font-size: 20px;
+                    }
+                    .details{
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 900px){
+    header{
+      nav{
+        a{
+          display: none;
+        }
+        img{
+          display: flex !important;
+        }
+      }
+  
+    }
+}
+@media (max-width: 520px){
+    .Search{
+        img{
+            width: 250px;
+        }
+        .text_search{
+            flex-direction: column;
+            gap: 20px;
+            .right{
+                .title{
+                    font-size: 42px;
+                }
+            }
+        }
+    }
+}
